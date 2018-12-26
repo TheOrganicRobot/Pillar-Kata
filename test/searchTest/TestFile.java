@@ -18,14 +18,15 @@ public class TestFile {
 	private FileRead file;
 	private List<String[]> fileReadOutput;
 	private GetWords wordsToSearch;
+	private List<String> myWords;
 	
 	@Before
-	public void setup() {
-		filePath = "StarTrekSearch.csv";
+	public void setup() {		
 		file = new FileRead();
 		wordsToSearch = new GetWords();
+		filePath = "StarTrekSearch.csv";
 		fileReadOutput = file.fileReader(filePath);
-		
+		myWords = wordsToSearch.getWordsToSearch(fileReadOutput);
 	}
 	
 	@Test
@@ -40,17 +41,13 @@ public class TestFile {
 	}
 	
 	@Test
-	public void testGetWords() {	
-	
-		List<String> myWords = wordsToSearch.getWordsToSearch(fileReadOutput);	
+	public void testGetWords() {		
 		assertEquals(7, myWords.size());
 	}
 	
 	@Test
 	public void testCreateMatrixOfCharacters() {
 		MatrixBuilder matrix = new MatrixBuilder();
-
-		List<String> myWords = wordsToSearch.getWordsToSearch(fileReadOutput);
 		char[][] charMatrix = matrix.Matricize();
 		assertEquals(0, charMatrix.length);
 	}
