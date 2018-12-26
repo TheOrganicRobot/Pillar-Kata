@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import searchKata.FileRead;
 import searchKata.GetWords;
+import searchKata.MatrixBuilder;
 
 public class TestFile {
 	
@@ -42,6 +43,13 @@ public class TestFile {
 		assertEquals(7, myWords.size());
 	}
 	
-
+	@Test
+	public void testCreateMatrixOfCharacters() {
+		MatrixBuilder matrix = new MatrixBuilder();
+		GetWords wordsToSearch = new GetWords();
+		List<String> myWords = wordsToSearch.getWordsToSearch(fileReadOutput);
+		char[][] charMatrix = matrix.Matricize();
+		assertEquals(0, charMatrix.length);
+	}
 
 }
