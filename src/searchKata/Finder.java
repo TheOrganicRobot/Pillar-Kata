@@ -69,4 +69,10 @@ public class Finder {
 		}
 		return false;
 	}
+	
+	public boolean searchNorthToSouth() {
+		
+		return true;
+	}
+	
 }

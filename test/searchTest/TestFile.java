@@ -38,15 +38,15 @@ public class TestFile {
 		file = new FileRead();
 		matrix = new MatrixBuilder();
 		wordsToSearch = new GetWords();
+			
+		filePath = "StarTrekSearch.csv"; //----------- Test file location
+		fileReadOutput = file.fileReader(filePath); //----------- Full list of all arrays and words from file
+		myWords = wordsToSearch.getWordsToSearch(fileReadOutput); //----------- List of words to be searched
+		charMatrix = matrix.Matricize(fileReadOutput); //----------- Two dimensional array for searching words
 		
-		
-		filePath = "StarTrekSearch.csv";
-		fileReadOutput = file.fileReader(filePath);
-		myWords = wordsToSearch.getWordsToSearch(fileReadOutput);
-		charMatrix = matrix.Matricize(fileReadOutput);
-		os = new ByteArrayOutputStream();
-		ps = new PrintStream(os);
-		System.setOut(ps);
+		os = new ByteArrayOutputStream(); //----------- #1 of capturing system out stream for testing
+		ps = new PrintStream(os); //----------- #2 of capturing system out stream for testing
+		System.setOut(ps); //----------- #3 of capturing system out stream for testing
 	}
 	
 	@Test
@@ -85,12 +85,13 @@ public class TestFile {
 	
 	@Test
 	public void testSearchEastToWest() {
-		
-		
 		assertTrue(find.searchEastToWest(charMatrix, myWords.get(2)));
 		assertEquals("KIRK: (4,7),(3,7),(2,7),(1,7)", os.toString());
 	}
 	
-	
+	@Test
+	public void testNorthToSouth() {
+		assertTrue(find.searchNorthToSouth());
+	}
 
 }
