@@ -48,8 +48,14 @@ public class TestFile {
 	@Test
 	public void testCreateMatrixOfCharacters() {
 		MatrixBuilder matrix = new MatrixBuilder();
-		char[][] charMatrix = matrix.Matricize();
-		assertEquals(0, charMatrix.length);
+		char[][] charMatrix = matrix.Matricize(fileReadOutput);
+		assertEquals(15, charMatrix.length);
+		assertEquals('S', charMatrix[0][5]);
+		assertEquals('C', charMatrix[1][5]);
+		assertEquals('O', charMatrix[2][5]);
+		assertEquals('T', charMatrix[3][5]);
+		assertEquals('T', charMatrix[4][5]);
+		assertEquals('Y', charMatrix[5][5]);
 	}
 
 }
