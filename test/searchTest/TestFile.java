@@ -14,19 +14,26 @@ import searchKata.MatrixBuilder;
 
 public class TestFile {
 	
-	private String filePath;
+	
 	private FileRead file;
-	private List<String[]> fileReadOutput;
+	private String filePath;	
 	private GetWords wordsToSearch;
+	private MatrixBuilder matrix;
+	
+	private List<String[]> fileReadOutput;
 	private List<String> myWords;
+	private char[][] charMatrix;
 	
 	@Before
 	public void setup() {		
 		file = new FileRead();
 		wordsToSearch = new GetWords();
+		matrix = new MatrixBuilder();
+		
 		filePath = "StarTrekSearch.csv";
 		fileReadOutput = file.fileReader(filePath);
 		myWords = wordsToSearch.getWordsToSearch(fileReadOutput);
+		charMatrix = matrix.Matricize(fileReadOutput);
 	}
 	
 	@Test
@@ -37,6 +44,7 @@ public class TestFile {
 	
 	@Test
 	public void testFileRead() {
+		fileReadOutput = file.fileReader(filePath);
 		assertEquals(16, fileReadOutput.size());	
 	}
 	
@@ -47,8 +55,6 @@ public class TestFile {
 	
 	@Test
 	public void testCreateMatrixOfCharacters() {
-		MatrixBuilder matrix = new MatrixBuilder();
-		char[][] charMatrix = matrix.Matricize(fileReadOutput);
 		assertEquals(15, charMatrix.length);
 		assertEquals('S', charMatrix[0][5]);
 		assertEquals('C', charMatrix[1][5]);
