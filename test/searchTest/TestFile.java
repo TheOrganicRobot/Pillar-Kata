@@ -10,12 +10,14 @@ import searchKata.FileRead;
 
 public class TestFile {
 
-
+	
 	@Test
 	public void testFileRead() {
+		
+		String filePath = "StarTrekSearch.csv";
 		FileRead file = new FileRead();
-		List<String[]> wordsToSearch = file.fileReader();
-		assertEquals(0, wordsToSearch.size());
+		List<String[]> wordsToSearch = file.fileReader(filePath);
+		assertEquals(16, wordsToSearch.size());
 		
 	}
 
