@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import searchKata.FileRead;
+import searchKata.Finder;
 import searchKata.GetWords;
 import searchKata.MatrixBuilder;
 
@@ -62,6 +63,12 @@ public class TestFile {
 		assertEquals('T', charMatrix[3][5]);
 		assertEquals('T', charMatrix[4][5]);
 		assertEquals('Y', charMatrix[5][5]);
+	}
+	
+	@Test 
+	public void testSearchWestToEast() {
+		Finder find = new Finder();
+		assertTrue(find.searchWestToEast());
 	}
 
 }
