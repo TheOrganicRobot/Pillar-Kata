@@ -2,7 +2,10 @@ package searchTest;
 
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.List;
 
 import org.junit.Before;
@@ -67,8 +70,17 @@ public class TestFile {
 	
 	@Test 
 	public void testSearchWestToEast() {
+		
+//		SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)
+		OutputStream os = new ByteArrayOutputStream();
+		PrintStream ps = new PrintStream(os);
+		System.setOut(ps);
+
 		Finder find = new Finder();
-		assertTrue(find.searchWestToEast());
+		assertTrue(find.searchWestToEast(charMatrix, myWords.get(3)));
+		assertEquals("SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)", os.toString());
+		
+		
 	}
 
 }
