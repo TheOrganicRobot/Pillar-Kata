@@ -28,6 +28,8 @@ public class TestFile {
 	private List<String[]> fileReadOutput;
 	private List<String> myWords;
 	private char[][] charMatrix;
+	private OutputStream os;
+	private PrintStream ps;
 	
 	@Before
 	public void setup() {	
@@ -42,6 +44,9 @@ public class TestFile {
 		fileReadOutput = file.fileReader(filePath);
 		myWords = wordsToSearch.getWordsToSearch(fileReadOutput);
 		charMatrix = matrix.Matricize(fileReadOutput);
+		os = new ByteArrayOutputStream();
+		ps = new PrintStream(os);
+		System.setOut(ps);
 	}
 	
 	@Test
@@ -74,10 +79,6 @@ public class TestFile {
 	
 	@Test 
 	public void testSearchWestToEast() {
-		OutputStream os = new ByteArrayOutputStream();
-		PrintStream ps = new PrintStream(os);
-		System.setOut(ps);
-
 		assertTrue(find.searchWestToEast(charMatrix, myWords.get(3)));
 		assertEquals("SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)", os.toString());		
 	}
@@ -85,7 +86,9 @@ public class TestFile {
 	@Test
 	public void testSearchEastToWest() {
 		
-		assertTrue(find.searchEastToWest());
+		
+		assertTrue(find.searchEastToWest(charMatrix, myWords.get(2)));
+		assertEquals("KIRK: (4,7),(3,7),(2,7),(1,7)", os.toString());
 	}
 	
 	
