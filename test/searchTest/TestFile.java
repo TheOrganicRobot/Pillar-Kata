@@ -23,16 +23,20 @@ public class TestFile {
 	private String filePath;	
 	private GetWords wordsToSearch;
 	private MatrixBuilder matrix;
+	private Finder find;
 	
 	private List<String[]> fileReadOutput;
 	private List<String> myWords;
 	private char[][] charMatrix;
 	
 	@Before
-	public void setup() {		
+	public void setup() {	
+		
+		find = new Finder();
 		file = new FileRead();
-		wordsToSearch = new GetWords();
 		matrix = new MatrixBuilder();
+		wordsToSearch = new GetWords();
+		
 		
 		filePath = "StarTrekSearch.csv";
 		fileReadOutput = file.fileReader(filePath);
@@ -70,17 +74,20 @@ public class TestFile {
 	
 	@Test 
 	public void testSearchWestToEast() {
-		
-//		SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)
 		OutputStream os = new ByteArrayOutputStream();
 		PrintStream ps = new PrintStream(os);
 		System.setOut(ps);
 
-		Finder find = new Finder();
 		assertTrue(find.searchWestToEast(charMatrix, myWords.get(3)));
-		assertEquals("SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)", os.toString());
-		
-		
+		assertEquals("SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)", os.toString());		
 	}
+	
+	@Test
+	public void testSearchEastToWest() {
+		
+		assertTrue(find.searchEastToWest());
+	}
+	
+	
 
 }
