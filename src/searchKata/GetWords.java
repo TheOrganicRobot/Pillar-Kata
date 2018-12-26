@@ -1,9 +1,14 @@
 package searchKata;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class GetWords {
 
-	public String[] wordsToSearch() {
-		String[] myWords = new String[0];
+	public List<String> getWordsToSearch(List<String[]> myList) {
+		
+		String[] wordsToSearch = myList.get(0);
+		List<String> myWords = Arrays.asList(wordsToSearch);
 		
 		return myWords;
 	}

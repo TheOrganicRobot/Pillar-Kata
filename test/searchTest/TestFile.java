@@ -17,17 +17,20 @@ public class TestFile {
 		
 		String filePath = "StarTrekSearch.csv";
 		FileRead file = new FileRead();
-		List<String[]> FileReadOutput = file.fileReader(filePath);
-		assertEquals(16, FileReadOutput.size());
+		List<String[]> fileReadOutput = file.fileReader(filePath);
+		assertEquals(16, fileReadOutput.size());
 		
 	}
 	@Test
 	public void testGetWords() {
 		
 		GetWords wordsToSearch = new GetWords();
-		String[] myWords = wordsToSearch.wordsToSearch();
+		String filePath = "StarTrekSearch.csv";
+		FileRead file = new FileRead();
+		List<String[]> fileReadOutput = file.fileReader(filePath);
+		List<String> myWords = wordsToSearch.getWordsToSearch(fileReadOutput);
 		
-		assertEquals(0, myWords.length);
+		assertEquals(7, myWords.size());
 	}
 
 }
