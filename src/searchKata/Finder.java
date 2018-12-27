@@ -141,5 +141,7 @@ public class Finder {
 			}
 			return false;
 		}
-	
+	public boolean searchNorthWestToSouthWest() {
+		return true;
+	}
 }
