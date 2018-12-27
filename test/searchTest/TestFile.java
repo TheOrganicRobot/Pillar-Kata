@@ -136,4 +136,9 @@ public class TestFile {
 		assertFalse(find.searchNorthWestToSouthWest(charMatrix, myWords.get(6)));
 		assertEquals("SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)", os.toString());
 	}
+	
+	@Test
+	public void testSearchSouthWestToNorthEast() {
+		assertTrue(find.searchSouthWestToNorthEast());
+	}
 }
