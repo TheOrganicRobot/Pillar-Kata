@@ -11,8 +11,8 @@ public class Finder {
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();	
 		int i = 0;
-		for (int row = 0; row < charMatrix.length; row++) { // ------Loop to pull row out of matrix
-			for (int col = 0; col < charMatrix[row].length; col++) { // ------Loop to pull column out of matrix
+		for (int row = 0; row < charMatrix.length; row++) { 
+			for (int col = 0; col < charMatrix[row].length; col++) { 
 				if (wordToSearch.charAt(i) == charMatrix[col][row]) {
 					i++;
 					rowList.add(row);
@@ -43,8 +43,8 @@ public class Finder {
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();	
 		int i = 0;
-		for (int row = 0; row < charMatrix.length; row++) { // ------Loop to pull row out of matrix
-			for (int col = charMatrix[row].length - 1; col >= 0; col--) { // ------Loop to pull column out of matrix
+		for (int row = 0; row < charMatrix.length; row++) {
+			for (int col = charMatrix[row].length - 1; col >= 0; col--) { 
 				if (wordToSearch.charAt(i) == charMatrix[col][row]) {
 					i++;
 					rowList.add(row);
@@ -77,8 +77,8 @@ public class Finder {
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
 		int j = 0;
-		for (int row = 0; row < charMatrix[j].length - 1; row++) { // ------Loop to pull row out of matrix
-			for (int col = 0; col < charMatrix.length; col++) { // ------Loop to pull column out of matrix
+		for (int row = 0; row < charMatrix[j].length - 1; row++) { 
+			for (int col = 0; col < charMatrix.length; col++) { 
 				if (wordToSearch.charAt(i) == charMatrix[row][col]) {
 					i++;					
 					rowList.add(row);
@@ -102,7 +102,6 @@ public class Finder {
 					return true;
 				}
 			}
-			j++;
 		}
 		return false;
 	}
@@ -112,8 +111,8 @@ public class Finder {
 			List<Integer> colList = new ArrayList<>();		
 			int i = 0;
 			int j = 0;
-			for (int row = 0; row < charMatrix[j].length - 1; row++) { // ------Loop to pull row out of matrix
-				for (int col = charMatrix[row].length - 1; col > 0; col--) { // ------Loop to pull column out of matrix
+			for (int row = 0; row < charMatrix[j].length - 1; row++) { 
+				for (int col = charMatrix[row].length - 1; col > 0; col--) { 
 					if (wordToSearch.charAt(i) == charMatrix[row][col]) {
 						i++;					
 						rowList.add(row);
@@ -137,7 +136,6 @@ public class Finder {
 						return true;
 					}
 				}
-				j++;
 			}
 			return false;
 		}
@@ -147,9 +145,9 @@ public class Finder {
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
 		int j = 0;
-		for (int row = 0; row < charMatrix.length; row++) { // ------Loop to pull row out of matrix
+		for (int row = 0; row < charMatrix.length; row++) { 
 			j = row;
-			for (int col = 0; col < charMatrix[row].length; col++) { // ------Loop to pull column out of matrix
+			for (int col = 0; col < charMatrix[row].length; col++) { 
 				if (wordToSearch.charAt(i) == charMatrix[j][col]) {
 					rowList.add(j);
 					colList.add(col);
@@ -177,12 +175,45 @@ public class Finder {
 					return true;
 				}
 			}
-			j++;
 		}
 		return false;
 	}
 	
-	public boolean searchNorthEastToSouthWest() {
-		return true;
+	public boolean searchNorthEastToSouthWest(char[][] charMatrix, String wordToSearch) {
+		List<Integer> rowList = new ArrayList<>();
+		List<Integer> colList = new ArrayList<>();		
+		int i = 0;
+		int j = 0;
+		for (int row = 0; row < charMatrix.length; row++) { 
+			j = row;
+			for (int col = charMatrix[row].length - 1; col >= 0; col--) { 
+				if (wordToSearch.charAt(i) == charMatrix[col][j]) {
+					rowList.add(j);
+					colList.add(col);
+					i++;
+					j++;				
+					
+				} else {
+					i = 0;
+					j = row;
+					rowList = new ArrayList<>();
+					colList = new ArrayList<>();
+				}
+				if(i == wordToSearch.length()) {	
+					System.out.print(wordToSearch + ": ");
+					int x = 0;
+					for(int y = 0; y < rowList.size(); y++) {
+						x++;
+						if(x == wordToSearch.length()) {
+				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")");
+				    	} else {
+				        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
+				    	}
+					}
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }
