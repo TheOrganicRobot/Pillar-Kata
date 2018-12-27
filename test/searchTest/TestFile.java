@@ -77,6 +77,21 @@ public class TestFile {
 		assertEquals('A', charMatrix[2][10]);
 		assertEquals('N', charMatrix[3][10]);
 		assertEquals('O', charMatrix[4][10]);
+	}
+	
+	@Test
+	public void testSearchWestToEast2() {
+		assertEquals(15, charMatrix.length);
+		assertTrue(find.searchWestToEast(charMatrix, myWords.get(4)));
+		assertFalse(find.searchWestToEast(charMatrix, myWords.get(0)));
+		assertFalse(find.searchWestToEast(charMatrix, myWords.get(1)));
+		assertFalse(find.searchWestToEast(charMatrix, myWords.get(2)));
+		assertFalse(find.searchWestToEast(charMatrix, myWords.get(3)));
+		assertFalse(find.searchWestToEast(charMatrix, myWords.get(5)));
+		assertFalse(find.searchWestToEast(charMatrix, myWords.get(6)));
+		assertFalse(find.searchWestToEast(charMatrix, myWords.get(7)));
+		assertEquals("PIANO: (0,10),(1,10),(2,10),(3,10),(4,10)", os.toString());		
+		
 		
 		
 	}
