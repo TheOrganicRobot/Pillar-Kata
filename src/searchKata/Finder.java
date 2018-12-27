@@ -153,9 +153,6 @@ public class Finder {
 					colList.add(col);
 					i++;
 					j++;				
-					if(j >= charMatrix.length) {
-						break;
-					}
 				} else {
 					i = 0;
 					rowList = new ArrayList<>();
@@ -173,6 +170,9 @@ public class Finder {
 				    	}
 					}
 					return true;
+				}
+				if(j >= charMatrix.length) {
+					break;
 				}
 			}
 		}
@@ -192,9 +192,6 @@ public class Finder {
 					colList.add(col);
 					i++;
 					j++;				
-					if(j >= charMatrix.length) {
-						break;
-					}
 				} else {
 					i = 0;
 					j = row;
@@ -213,6 +210,9 @@ public class Finder {
 				    	}
 					}
 					return true;
+				}
+				if(j >= charMatrix.length) {
+					break;
 				}
 			}
 		}
@@ -232,9 +232,6 @@ public class Finder {
 					colList.add(col);
 					i++;
 					j--;				
-					if(j < 0) {
-						break;
-					}
 				} else {
 					i = 0;
 					j = row;
@@ -253,6 +250,9 @@ public class Finder {
 				    	}
 					}
 					return true;
+				}
+				if(j < 0) {
+					break;
 				}
 			}
 		}
