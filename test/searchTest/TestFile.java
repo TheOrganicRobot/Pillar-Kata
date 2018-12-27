@@ -149,4 +149,9 @@ public class TestFile {
 		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(5)));		
 		assertEquals("UHURA: (4,0),(3,1),(2,2),(1,3),(0,4)", os.toString());
 	}
+	
+	@Test
+	public void testSearchSouthWestToNorthEast() {
+		assertTrue(find.searchSouthWestToNorthEast());
+	}
 }
