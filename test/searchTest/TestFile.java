@@ -171,6 +171,6 @@ public class TestFile {
 	
 	@Test
 	public void testSearchSouthEastToNorthWest() {
-		assertTrue(find.searchSouthEastToNorthWest());
+		assertTrue(find.searchSouthEastToNorthWest(charMatrix, myWords.get(5)));
 	}
 }
