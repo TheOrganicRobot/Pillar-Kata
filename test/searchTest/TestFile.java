@@ -115,7 +115,14 @@ public class TestFile {
 	
 	@Test
 	public void testSouthToNorth() {
-		assertTrue(find.searchSouthToNorth());
+		assertTrue(find.searchSouthToNorth(charMatrix, myWords.get(1)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(0)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(2)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(3)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(4)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(5)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(6)));
+		assertEquals("KHAN: (5,9),(5,8),(5,7),(5,6)", os.toString());
 	}
 
 }
