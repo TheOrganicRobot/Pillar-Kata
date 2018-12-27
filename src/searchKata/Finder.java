@@ -192,7 +192,9 @@ public class Finder {
 					colList.add(col);
 					i++;
 					j++;				
-					
+					if(j >= charMatrix.length) {
+						break;
+					}
 				} else {
 					i = 0;
 					j = row;
