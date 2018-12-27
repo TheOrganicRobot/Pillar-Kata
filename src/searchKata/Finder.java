@@ -151,10 +151,10 @@ public class Finder {
 			j = row;
 			for (int col = 0; col < charMatrix[row].length; col++) { // ------Loop to pull column out of matrix
 				if (wordToSearch.charAt(i) == charMatrix[j][col]) {
-					i++;
-					j++;
-					rowList.add(row);
+					rowList.add(j);
 					colList.add(col);
+					i++;
+					j++;				
 					if(j >= charMatrix.length) {
 						break;
 					}
