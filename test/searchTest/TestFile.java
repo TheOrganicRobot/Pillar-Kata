@@ -172,5 +172,13 @@ public class TestFile {
 	@Test
 	public void testSearchSouthEastToNorthWest() {
 		assertTrue(find.searchSouthEastToNorthWest(charMatrix, myWords.get(5)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(0)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(1)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(2)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(3)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(4)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(6)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(7)));
+		assertEquals("SULU: (3,3),(2,2),(1,1),(0,0)", os.toString());
 	}
 }

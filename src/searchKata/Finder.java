@@ -292,6 +292,9 @@ public class Finder {
 					}
 					return true;
 				}
+				if(j < 0) {
+					break;
+				}
 			}
 		}
 		return false;
