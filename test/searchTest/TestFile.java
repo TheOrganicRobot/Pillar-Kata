@@ -63,7 +63,7 @@ public class TestFile {
 	
 	@Test
 	public void testGetWords() {		
-		assertEquals(7, myWords.size());
+		assertEquals(8, myWords.size());
 	}
 	
 	@Test
@@ -86,6 +86,7 @@ public class TestFile {
 		assertFalse(find.searchWestToEast(charMatrix, myWords.get(4)));
 		assertFalse(find.searchWestToEast(charMatrix, myWords.get(5)));
 		assertFalse(find.searchWestToEast(charMatrix, myWords.get(6)));
+		assertFalse(find.searchWestToEast(charMatrix, myWords.get(7)));
 		assertEquals("SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)", os.toString());		
 	}
 	
@@ -98,6 +99,7 @@ public class TestFile {
 		assertFalse(find.searchEastToWest(charMatrix, myWords.get(4)));
 		assertFalse(find.searchEastToWest(charMatrix, myWords.get(5)));
 		assertFalse(find.searchEastToWest(charMatrix, myWords.get(6)));
+		assertFalse(find.searchEastToWest(charMatrix, myWords.get(7)));
 		assertEquals("KIRK: (4,7),(3,7),(2,7),(1,7)", os.toString());
 	}
 	
@@ -110,6 +112,7 @@ public class TestFile {
 		assertFalse(find.searchNorthToSouth(charMatrix, myWords.get(4)));
 		assertFalse(find.searchNorthToSouth(charMatrix, myWords.get(5)));
 		assertFalse(find.searchNorthToSouth(charMatrix, myWords.get(6)));
+		assertFalse(find.searchNorthToSouth(charMatrix, myWords.get(7)));
 		assertEquals("BONES: (0,6),(0,7),(0,8),(0,9),(0,10)", os.toString());
 	}
 	
@@ -122,6 +125,7 @@ public class TestFile {
 		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(4)));
 		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(5)));
 		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(6)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(7)));
 		assertEquals("KHAN: (5,9),(5,8),(5,7),(5,6)", os.toString());
 	}
 
@@ -134,6 +138,7 @@ public class TestFile {
 		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(3)));
 		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(5)));
 		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(6)));
+		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(7)));
 		assertEquals("SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)", os.toString());
 	}
 	
@@ -146,7 +151,8 @@ public class TestFile {
 		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(2)));
 		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(3)));
 		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(4)));
-		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(5)));		
+		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(5)));
+		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(7)));	
 		assertEquals("UHURA: (4,0),(3,1),(2,2),(1,3),(0,4)", os.toString());
 	}
 	
