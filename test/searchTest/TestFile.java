@@ -112,5 +112,10 @@ public class TestFile {
 		assertFalse(find.searchNorthToSouth(charMatrix, myWords.get(6)));
 		assertEquals("BONES: (0,6),(0,7),(0,8),(0,9),(0,10)", os.toString());
 	}
+	
+	@Test
+	public void testSouthToNorth() {
+		assertTrue(find.searchSouthToNorth());
+	}
 
 }

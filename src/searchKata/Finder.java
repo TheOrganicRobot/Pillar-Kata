@@ -77,7 +77,7 @@ public class Finder {
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
 		int j = 0;
-		for (int row = 0; row < charMatrix[j].length -1; row++) { // ------Loop to pull row out of matrix
+		for (int row = 0; row < charMatrix[j].length - 1; row++) { // ------Loop to pull row out of matrix
 			for (int col = 0; col < charMatrix.length; col++) { // ------Loop to pull column out of matrix
 				if (wordToSearch.charAt(i) == charMatrix[row][col]) {
 					i++;					
@@ -105,6 +105,11 @@ public class Finder {
 			j++;
 		}
 		return false;
+	}
+	
+	public boolean searchSouthToNorth() {
+		
+		return true;
 	}
 	
 }
