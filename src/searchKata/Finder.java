@@ -219,7 +219,43 @@ public class Finder {
 		return false;
 	}
 	
-	public boolean searchSouthWestToNorthEast() {
-		return true;
+	public boolean searchSouthWestToNorthEast(char[][] charMatrix, String wordToSearch) {
+		List<Integer> rowList = new ArrayList<>();
+		List<Integer> colList = new ArrayList<>();		
+		int i = 0;
+		int j = 0;
+		for (int row = 0; row < charMatrix.length; row++) { 
+			j = row;
+			for (int col = 0; col < charMatrix[row].length; col++) { 
+				if (wordToSearch.charAt(i) == charMatrix[col][j]) {
+					rowList.add(j);
+					colList.add(col);
+					i++;
+					j--;				
+					if(j < 0) {
+						break;
+					}
+				} else {
+					i = 0;
+					j = row;
+					rowList = new ArrayList<>();
+					colList = new ArrayList<>();
+				}
+				if(i == wordToSearch.length()) {	
+					System.out.print(wordToSearch + ": ");
+					int x = 0;
+					for(int y = 0; y < rowList.size(); y++) {
+						x++;
+						if(x == wordToSearch.length()) {
+				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")");
+				    	} else {
+				        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
+				    	}
+					}
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }
