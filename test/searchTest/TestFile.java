@@ -126,19 +126,19 @@ public class TestFile {
 	}
 
 	@Test
-	public void testSearchNorthWestToSouthWest() {
-		assertTrue(find.searchNorthWestToSouthWest(charMatrix, myWords.get(4)));
-		assertFalse(find.searchNorthWestToSouthWest(charMatrix, myWords.get(0)));
-		assertFalse(find.searchNorthWestToSouthWest(charMatrix, myWords.get(1)));
-		assertFalse(find.searchNorthWestToSouthWest(charMatrix, myWords.get(2)));
-		assertFalse(find.searchNorthWestToSouthWest(charMatrix, myWords.get(3)));
-		assertFalse(find.searchNorthWestToSouthWest(charMatrix, myWords.get(5)));
-		assertFalse(find.searchNorthWestToSouthWest(charMatrix, myWords.get(6)));
+	public void testSearchNorthWestToSouthEast() {
+		assertTrue(find.searchNorthWestToSouthEast(charMatrix, myWords.get(4)));
+		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(0)));
+		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(1)));
+		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(2)));
+		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(3)));
+		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(5)));
+		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(6)));
 		assertEquals("SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)", os.toString());
 	}
 	
 	@Test
-	public void testSearchSouthWestToNorthEast() {
-		assertTrue(find.searchSouthWestToNorthEast());
+	public void testSearchNorthEastToSouthWest() {
+		assertTrue(find.searchNorthEastToSouthWest());
 	}
 }

@@ -142,7 +142,7 @@ public class Finder {
 			return false;
 		}
 		
-	public boolean searchNorthWestToSouthWest(char[][] charMatrix, String wordToSearch) {
+	public boolean searchNorthWestToSouthEast(char[][] charMatrix, String wordToSearch) {
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
@@ -182,7 +182,7 @@ public class Finder {
 		return false;
 	}
 	
-	public boolean searchSouthWestToNorthEast() {
+	public boolean searchNorthEastToSouthWest() {
 		return true;
 	}
 }
