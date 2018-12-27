@@ -258,4 +258,8 @@ public class Finder {
 		}
 		return false;
 	}
+	
+	public boolean searchSouthEastToNorthWest() {
+		return true;
+	}
 }
