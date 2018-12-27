@@ -159,5 +159,13 @@ public class TestFile {
 	@Test
 	public void testSearchSouthWestToNorthEast() {
 		assertTrue(find.searchSouthWestToNorthEast(charMatrix, myWords.get(7)));
+		assertFalse(find.searchSouthWestToNorthEast(charMatrix, myWords.get(0)));
+		assertFalse(find.searchSouthWestToNorthEast(charMatrix, myWords.get(1)));
+		assertFalse(find.searchSouthWestToNorthEast(charMatrix, myWords.get(2)));
+		assertFalse(find.searchSouthWestToNorthEast(charMatrix, myWords.get(3)));
+		assertFalse(find.searchSouthWestToNorthEast(charMatrix, myWords.get(4)));
+		assertFalse(find.searchSouthWestToNorthEast(charMatrix, myWords.get(5)));
+		assertFalse(find.searchSouthWestToNorthEast(charMatrix, myWords.get(6)));
+		assertEquals("CRUSHER: (5,14),(6,13),(7,12),(8,11),(9,10),(10,9),(11,8)", os.toString());
 	}
 }
