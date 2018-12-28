@@ -28,7 +28,7 @@ public class Finder {
 					for(int y = 0; y < rowList.size(); y++) {
 						x++;
 						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")");
+				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")\n");
 				    	} else {
 				        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
 				    	}
@@ -60,7 +60,7 @@ public class Finder {
 					for(int y = 0; y < rowList.size(); y++) {
 						x++;
 						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")");
+				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")\n");
 				    	} else {
 				        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
 				    	}
@@ -94,7 +94,7 @@ public class Finder {
 					for(int y = 0; y < rowList.size(); y++) {
 						x++;
 						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + ")");
+				    		System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + ")\n");
 				    	} else {
 				        System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + "),");
 				    	}
@@ -128,7 +128,7 @@ public class Finder {
 						for(int y = 0; y < rowList.size(); y++) {
 							x++;
 							if(x == wordToSearch.length()) {
-					    		System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + ")");
+					    		System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + ")\n");
 					    	} else {
 					        System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + "),");
 					    	}
@@ -164,7 +164,7 @@ public class Finder {
 					for(int y = 0; y < rowList.size(); y++) {
 						x++;
 						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + ")");
+				    		System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + ")\n");
 				    	} else {
 				        System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + "),");
 				    	}
@@ -204,7 +204,7 @@ public class Finder {
 					for(int y = 0; y < rowList.size(); y++) {
 						x++;
 						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")");
+				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")\n");
 				    	} else {
 				        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
 				    	}
@@ -244,7 +244,7 @@ public class Finder {
 					for(int y = 0; y < rowList.size(); y++) {
 						x++;
 						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")");
+				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")\n");
 				    	} else {
 				        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
 				    	}
@@ -285,7 +285,7 @@ public class Finder {
 					for(int y = 0; y < rowList.size(); y++) {
 						x++;
 						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")");
+				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")\n");
 				    	} else {
 				        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
 				    	}

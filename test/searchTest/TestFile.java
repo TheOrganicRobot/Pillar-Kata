@@ -68,6 +68,7 @@ public class TestFile {
 		assertEquals(8, myWords.size());
 	}
 	
+	//--------------------------------------------BEGIN TEST FOR INSTRUMENTSEARCH.CSV---UNCOMMENT FOR TESTING THAT FILE-----------
 	@Test
 	public void testCreateMatrixOfCharacters2() {
 		assertEquals(15,charMatrix.length);
@@ -90,12 +91,29 @@ public class TestFile {
 		assertFalse(find.searchWestToEast(charMatrix, myWords.get(5)));
 		assertFalse(find.searchWestToEast(charMatrix, myWords.get(6)));
 		assertFalse(find.searchWestToEast(charMatrix, myWords.get(7)));
-		assertEquals("PIANO: (0,10),(1,10),(2,10),(3,10),(4,10)", os.toString());		
-		
-		
-		
+		assertEquals("PIANO: (0,10),(1,10),(2,10),(3,10),(4,10)\n", os.toString());				
 	}
-	//--------------------------------------------BEGIN TEST FOR STARTREKSEARCH.CSV---UNCOMMENT FOR TESTING THAT FILE-----------
+	
+	@Test
+	public void testSearchEastToWest2() {
+		assertTrue(find.searchEastToWest(charMatrix, myWords.get(6)));
+		assertFalse(find.searchEastToWest(charMatrix, myWords.get(0)));
+		assertFalse(find.searchEastToWest(charMatrix, myWords.get(1)));
+		assertFalse(find.searchEastToWest(charMatrix, myWords.get(2)));
+		assertFalse(find.searchEastToWest(charMatrix, myWords.get(3)));
+		assertFalse(find.searchEastToWest(charMatrix, myWords.get(4)));
+		assertFalse(find.searchEastToWest(charMatrix, myWords.get(5)));
+		assertFalse(find.searchEastToWest(charMatrix, myWords.get(7)));
+		assertEquals("BARITONE: (8,9),(7,9),(6,9),(5,9),(4,9),(3,9),(2,9),(1,9)\n", os.toString());
+	}
+	
+	
+	//--------------------------------------------END TEST FOR STARTREKSEARCH.CSV---UNCOMMENT FOR TESTING THAT FILE-----------
+	
+	
+	
+	
+//	//--------------------------------------------BEGIN TEST FOR STARTREKSEARCH.CSV---UNCOMMENT FOR TESTING THAT FILE-----------
 //	@Test
 //	public void testCreateMatrixOfCharacters() {
 //		assertEquals(15, charMatrix.length);
@@ -117,7 +135,7 @@ public class TestFile {
 //		assertFalse(find.searchWestToEast(charMatrix, myWords.get(5)));
 //		assertFalse(find.searchWestToEast(charMatrix, myWords.get(6)));
 //		assertFalse(find.searchWestToEast(charMatrix, myWords.get(7)));
-//		assertEquals("SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)", os.toString());		
+//		assertEquals("SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)\n", os.toString());		
 //	}
 //	
 //	@Test
@@ -130,7 +148,7 @@ public class TestFile {
 //		assertFalse(find.searchEastToWest(charMatrix, myWords.get(5)));
 //		assertFalse(find.searchEastToWest(charMatrix, myWords.get(6)));
 //		assertFalse(find.searchEastToWest(charMatrix, myWords.get(7)));
-//		assertEquals("KIRK: (4,7),(3,7),(2,7),(1,7)", os.toString());
+//		assertEquals("KIRK: (4,7),(3,7),(2,7),(1,7)\n", os.toString());
 //	}
 //	
 //	@Test
@@ -143,7 +161,7 @@ public class TestFile {
 //		assertFalse(find.searchNorthToSouth(charMatrix, myWords.get(5)));
 //		assertFalse(find.searchNorthToSouth(charMatrix, myWords.get(6)));
 //		assertFalse(find.searchNorthToSouth(charMatrix, myWords.get(7)));
-//		assertEquals("BONES: (0,6),(0,7),(0,8),(0,9),(0,10)", os.toString());
+//		assertEquals("BONES: (0,6),(0,7),(0,8),(0,9),(0,10)\n", os.toString());
 //	}
 //	
 //	@Test
@@ -156,7 +174,7 @@ public class TestFile {
 //		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(5)));
 //		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(6)));
 //		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(7)));
-//		assertEquals("KHAN: (5,9),(5,8),(5,7),(5,6)", os.toString());
+//		assertEquals("KHAN: (5,9),(5,8),(5,7),(5,6)\n", os.toString());
 //	}
 //
 //	@Test
@@ -169,7 +187,7 @@ public class TestFile {
 //		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(5)));
 //		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(6)));
 //		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(7)));
-//		assertEquals("SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)", os.toString());
+//		assertEquals("SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)\n", os.toString());
 //	}
 //	
 //	@Test
@@ -183,7 +201,7 @@ public class TestFile {
 //		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(4)));
 //		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(5)));
 //		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(7)));	
-//		assertEquals("UHURA: (4,0),(3,1),(2,2),(1,3),(0,4)", os.toString());
+//		assertEquals("UHURA: (4,0),(3,1),(2,2),(1,3),(0,4)\n", os.toString());
 //	}
 //	
 //	@Test
@@ -196,7 +214,7 @@ public class TestFile {
 //		assertFalse(find.searchSouthWestToNorthEast(charMatrix, myWords.get(4)));
 //		assertFalse(find.searchSouthWestToNorthEast(charMatrix, myWords.get(5)));
 //		assertFalse(find.searchSouthWestToNorthEast(charMatrix, myWords.get(6)));
-//		assertEquals("CRUSHER: (5,14),(6,13),(7,12),(8,11),(9,10),(10,9),(11,8)", os.toString());
+//		assertEquals("CRUSHER: (5,14),(6,13),(7,12),(8,11),(9,10),(10,9),(11,8)\n", os.toString());
 //	}
 //	
 //	@Test
@@ -209,8 +227,8 @@ public class TestFile {
 //		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(4)));
 //		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(6)));
 //		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(7)));
-//		assertEquals("SULU: (3,3),(2,2),(1,1),(0,0)", os.toString());
+//		assertEquals("SULU: (3,3),(2,2),(1,1),(0,0)\n", os.toString());
 //	}
-	//--------------------------------------------END TEST FOR STARTREKSEARCH.CSV---UNCOMMENT FOR TESTING THAT FILE-----------
+//	//--------------------------------------------END TEST FOR STARTREKSEARCH.CSV---UNCOMMENT FOR TESTING THAT FILE-----------
 	
 }
