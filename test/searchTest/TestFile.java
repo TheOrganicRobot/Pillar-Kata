@@ -145,7 +145,21 @@ public class TestFile {
 		assertFalse(find.searchNorthWestToSouthEast(charMatrix, myWords.get(7)));
 		assertEquals("DRUMS: (8,5),(9,6),(10,7),(11,8),(12,9)\n", os.toString());
 	}
-	//--------------------------------------------END TEST FOR STARTREKSEARCH.CSV---UNCOMMENT FOR TESTING THAT FILE-----------
+	
+	@Test
+	public void testSearchNorthEastToSouthWest2() {
+		
+		assertTrue(find.searchNorthEastToSouthWest(charMatrix, myWords.get(5)));
+		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(0)));
+		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(1)));
+		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(2)));
+		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(3)));
+		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(4)));
+		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(6)));
+		assertFalse(find.searchNorthEastToSouthWest(charMatrix, myWords.get(7)));	
+		assertEquals("MANDOLIN: (11,0),(10,1),(9,2),(8,3),(7,4),(6,5),(5,6),(4,7)\n", os.toString());
+	}
+	//--------------------------------------------END TEST FOR INSTRUMENTSEARCH.CSV---UNCOMMENT FOR TESTING THAT FILE-----------
 	
 	
 	
