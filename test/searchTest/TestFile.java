@@ -172,6 +172,19 @@ public class TestFile {
 		assertFalse(find.searchSouthWestToNorthEast(charMatrix, myWords.get(7)));
 		assertEquals("FLUTE: (0,7),(1,6),(2,5),(3,4),(4,3)\n", os.toString());
 	}
+	
+	@Test
+	public void testSearchSouthEastToNorthWest2() {
+		assertTrue(find.searchSouthEastToNorthWest(charMatrix, myWords.get(7)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(0)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(1)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(2)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(3)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(4)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(5)));
+		assertFalse(find.searchSouthEastToNorthWest(charMatrix, myWords.get(6)));
+		assertEquals("TRUMPET: (13,11),(12,10),(11,9),(10,8),(9,7),(8,6),(7,5)\n", os.toString());
+	}
 	//--------------------------------------------END TEST FOR INSTRUMENTSEARCH.CSV---UNCOMMENT FOR TESTING THAT FILE-----------
 	
 	
