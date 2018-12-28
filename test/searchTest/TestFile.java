@@ -71,7 +71,6 @@ public class TestFile {
 	//--------------------------------------------BEGIN TEST FOR INSTRUMENTSEARCH.CSV---UNCOMMENT FOR TESTING THAT FILE-----------
 	@Test
 	public void testCreateMatrixOfCharacters2() {
-		assertEquals(15,charMatrix.length);
 		assertEquals(15, charMatrix.length);
 		assertEquals('P', charMatrix[0][10]);
 		assertEquals('I', charMatrix[1][10]);
@@ -82,7 +81,6 @@ public class TestFile {
 	
 	@Test
 	public void testSearchWestToEast2() {
-		assertEquals(15, charMatrix.length);
 		assertTrue(find.searchWestToEast(charMatrix, myWords.get(4)));
 		assertFalse(find.searchWestToEast(charMatrix, myWords.get(0)));
 		assertFalse(find.searchWestToEast(charMatrix, myWords.get(1)));
