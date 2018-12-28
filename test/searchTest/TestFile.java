@@ -119,6 +119,19 @@ public class TestFile {
 		assertFalse(find.searchNorthToSouth(charMatrix, myWords.get(7)));
 		assertEquals("BASS: (9,9),(9,10),(9,11),(9,12)\n", os.toString());
 	}
+	
+	@Test
+	public void testSearchSouthToNorth2() {
+		assertTrue(find.searchSouthToNorth(charMatrix, myWords.get(1)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(0)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(2)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(3)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(4)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(5)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(6)));
+		assertFalse(find.searchSouthToNorth(charMatrix, myWords.get(7)));
+		assertEquals("GUITAR: (12,5),(12,4),(12,3),(12,2),(12,1),(12,0)\n", os.toString());
+	}
 	//--------------------------------------------END TEST FOR STARTREKSEARCH.CSV---UNCOMMENT FOR TESTING THAT FILE-----------
 	
 	

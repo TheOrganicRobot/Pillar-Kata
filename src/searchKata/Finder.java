@@ -111,8 +111,8 @@ public class Finder {
 			List<Integer> colList = new ArrayList<>();		
 			int i = 0;
 			int j = 0;
-			for (int row = 0; row < charMatrix[j].length - 1; row++) { 
-				for (int col = charMatrix[row].length - 1; col > 0; col--) { 
+			for (int row = charMatrix[j].length - 1; row > 0; row--) { 
+				for (int col = charMatrix[row].length - 1; col >= 0; col--) { 
 					if (wordToSearch.charAt(i) == charMatrix[row][col]) {
 						i++;					
 						rowList.add(row);
