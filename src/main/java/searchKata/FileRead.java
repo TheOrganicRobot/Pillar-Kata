@@ -1,5 +1,5 @@
 
-package searchKata;
+package main.java.searchKata;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,7 +21,7 @@ public class FileRead {
 		}
 		while(scanner.hasNextLine()) {
 			String line = scanner.nextLine();
-			String[] array = line.split(",");
+			String[] array = line.split(",| ");
 			myList.add(array);
 		}
 		return myList;

@@ -1,4 +1,4 @@
-package searchKata;
+package main.java.searchKata;
 
 import java.util.Arrays;
 import java.util.List;

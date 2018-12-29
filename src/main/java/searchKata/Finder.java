@@ -1,4 +1,4 @@
-package searchKata;
+package main.java.searchKata;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -23,17 +23,7 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					System.out.print(wordToSearch + ": ");
-					int x = 0;
-					for(int y = 0; y < rowList.size(); y++) {
-						x++;
-						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")\n");
-				    	} else {
-				        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
-				    	}
-					}
-					return true;
+					return printOutAndReturnTrue(wordToSearch, rowList, colList);
 				}
 			}
 		}
@@ -55,17 +45,7 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					System.out.print(wordToSearch + ": ");
-					int x = 0;
-					for(int y = 0; y < rowList.size(); y++) {
-						x++;
-						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")\n");
-				    	} else {
-				        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
-				    	}
-					}
-					return true;
+					return printOutAndReturnTrue(wordToSearch, rowList, colList);
 				}
 			}
 		}
@@ -81,25 +61,15 @@ public class Finder {
 			for (int col = 0; col < charMatrix.length; col++) { 
 				if (wordToSearch.charAt(i) == charMatrix[row][col]) {
 					i++;					
-					rowList.add(row);
-					colList.add(col);
+					rowList.add(col);
+					colList.add(row);
 				} else {
 					i = 0;
 					rowList = new ArrayList<>();
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					System.out.print(wordToSearch + ": ");
-					int x = 0;
-					for(int y = 0; y < rowList.size(); y++) {
-						x++;
-						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + ")\n");
-				    	} else {
-				        System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + "),");
-				    	}
-					}
-					return true;
+					return printOutAndReturnTrue(wordToSearch, rowList, colList);
 				}
 			}
 		}
@@ -115,25 +85,15 @@ public class Finder {
 				for (int col = charMatrix[row].length - 1; col >= 0; col--) { 
 					if (wordToSearch.charAt(i) == charMatrix[row][col]) {
 						i++;					
-						rowList.add(row);
-						colList.add(col);
+						rowList.add(col);
+						colList.add(row);
 					} else {
 						i = 0;
 						rowList = new ArrayList<>();
 						colList = new ArrayList<>();
 					}
 					if(i == wordToSearch.length()) {	
-						System.out.print(wordToSearch + ": ");
-						int x = 0;
-						for(int y = 0; y < rowList.size(); y++) {
-							x++;
-							if(x == wordToSearch.length()) {
-					    		System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + ")\n");
-					    	} else {
-					        System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + "),");
-					    	}
-						}
-						return true;
+						return printOutAndReturnTrue(wordToSearch, rowList, colList);
 					}
 				}
 			}
@@ -149,8 +109,8 @@ public class Finder {
 			j = row;
 			for (int col = 0; col < charMatrix[row].length; col++) { 
 				if (wordToSearch.charAt(i) == charMatrix[j][col]) {
-					rowList.add(j);
-					colList.add(col);
+					rowList.add(col);
+					colList.add(j);
 					i++;
 					j++;				
 				} else {
@@ -159,17 +119,7 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					System.out.print(wordToSearch + ": ");
-					int x = 0;
-					for(int y = 0; y < rowList.size(); y++) {
-						x++;
-						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + ")\n");
-				    	} else {
-				        System.out.print("(" + rowList.get(y) + "," +  colList.get(y) + "),");
-				    	}
-					}
-					return true;
+					return printOutAndReturnTrue(wordToSearch, rowList, colList);
 				}
 				if(j >= charMatrix.length) {
 					break;
@@ -199,17 +149,7 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					System.out.print(wordToSearch + ": ");
-					int x = 0;
-					for(int y = 0; y < rowList.size(); y++) {
-						x++;
-						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")\n");
-				    	} else {
-				        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
-				    	}
-					}
-					return true;
+					return printOutAndReturnTrue(wordToSearch, rowList, colList);
 				}
 				if(j >= charMatrix.length) {
 					break;
@@ -239,17 +179,7 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					System.out.print(wordToSearch + ": ");
-					int x = 0;
-					for(int y = 0; y < rowList.size(); y++) {
-						x++;
-						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")\n");
-				    	} else {
-				        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
-				    	}
-					}
-					return true;
+					return printOutAndReturnTrue(wordToSearch, rowList, colList);
 				}
 				if(j < 0) {
 					break;
@@ -280,17 +210,7 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					System.out.print(wordToSearch + ": ");
-					int x = 0;
-					for(int y = 0; y < rowList.size(); y++) {
-						x++;
-						if(x == wordToSearch.length()) {
-				    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")\n");
-				    	} else {
-				        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
-				    	}
-					}
-					return true;
+					return printOutAndReturnTrue(wordToSearch, rowList, colList);
 				}
 				if(j < 0) {
 					break;
@@ -298,5 +218,19 @@ public class Finder {
 			}
 		}
 		return false;
+	}
+	
+	private boolean printOutAndReturnTrue(String wordToSearch, List<Integer> rowList, List<Integer> colList) {
+		System.out.print(wordToSearch + ": ");
+		int x = 0;
+		for(int y = 0; y < rowList.size(); y++) {
+			x++;
+			if(x == wordToSearch.length()) {
+	    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")\n");
+	    	} else {
+	        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
+	    	}
+		}
+		return true;
 	}
 }
