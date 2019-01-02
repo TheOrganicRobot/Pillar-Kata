@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
 Built-By: The Organic Robot
+Class-Path: lib/hamcrest-core-2.1.jar lib/hamcrest-library-2.1.jar
 Build-Jdk: 1.8.0_191
 Created-By: Maven Integration for Eclipse
 Main-Class: main.java.searchKata.WordSearch

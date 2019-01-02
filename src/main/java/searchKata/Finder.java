@@ -7,7 +7,8 @@ import java.util.Set;
 
 public class Finder {
 
-	public boolean searchWestToEast(char[][] charMatrix, String wordToSearch) {
+	public LinkedHashMap<Integer, Integer> searchWestToEast(char[][] charMatrix, String wordToSearch) {
+		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();	
 		int i = 0;
@@ -23,13 +24,14 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					return printOutAndReturnTrue(wordToSearch, rowList, colList);
+					return addToLinkedHashMap(rowList, colList);
 				}
 			}
 		}
-		return false;
+		return coordinatesMap;
 	}
-	public boolean searchEastToWest(char[][] charMatrix, String wordToSearch) {
+	public LinkedHashMap<Integer, Integer> searchEastToWest(char[][] charMatrix, String wordToSearch) {
+		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();	
 		int i = 0;
@@ -45,14 +47,15 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					return printOutAndReturnTrue(wordToSearch, rowList, colList);
+					return addToLinkedHashMap(rowList, colList);
 				}
 			}
 		}
-		return false;
+		return coordinatesMap;
 	}
 	
-	public boolean searchNorthToSouth(char[][] charMatrix, String wordToSearch) {
+	public LinkedHashMap<Integer, Integer> searchNorthToSouth(char[][] charMatrix, String wordToSearch) {
+		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
@@ -69,14 +72,15 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					return printOutAndReturnTrue(wordToSearch, rowList, colList);
+					return addToLinkedHashMap(rowList, colList);
 				}
 			}
 		}
-		return false;
+		return coordinatesMap;
 	}
 	
-		public boolean searchSouthToNorth(char[][] charMatrix, String wordToSearch) {
+		public LinkedHashMap<Integer, Integer> searchSouthToNorth(char[][] charMatrix, String wordToSearch) {
+			LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
 			List<Integer> rowList = new ArrayList<>();
 			List<Integer> colList = new ArrayList<>();		
 			int i = 0;
@@ -93,14 +97,15 @@ public class Finder {
 						colList = new ArrayList<>();
 					}
 					if(i == wordToSearch.length()) {	
-						return printOutAndReturnTrue(wordToSearch, rowList, colList);
+						return addToLinkedHashMap(rowList, colList);
 					}
 				}
 			}
-			return false;
+			return coordinatesMap;
 		}
 		
-	public boolean searchNorthWestToSouthEast(char[][] charMatrix, String wordToSearch) {
+	public LinkedHashMap<Integer, Integer> searchNorthWestToSouthEast(char[][] charMatrix, String wordToSearch) {
+		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
@@ -119,17 +124,18 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					return printOutAndReturnTrue(wordToSearch, rowList, colList);
+					return addToLinkedHashMap(rowList, colList);
 				}
 				if(j >= charMatrix.length) {
 					break;
 				}
 			}
 		}
-		return false;
+		return coordinatesMap;
 	}
 	
-	public boolean searchNorthEastToSouthWest(char[][] charMatrix, String wordToSearch) {
+	public LinkedHashMap<Integer, Integer> searchNorthEastToSouthWest(char[][] charMatrix, String wordToSearch) {
+		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
@@ -149,17 +155,18 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					return printOutAndReturnTrue(wordToSearch, rowList, colList);
+					return addToLinkedHashMap(rowList, colList);
 				}
 				if(j >= charMatrix.length) {
 					break;
 				}
 			}
 		}
-		return false;
+		return coordinatesMap;
 	}
 	
-	public boolean searchSouthWestToNorthEast(char[][] charMatrix, String wordToSearch) {
+	public LinkedHashMap<Integer, Integer> searchSouthWestToNorthEast(char[][] charMatrix, String wordToSearch) {
+		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
@@ -179,17 +186,18 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					return printOutAndReturnTrue(wordToSearch, rowList, colList);
+					return addToLinkedHashMap(rowList, colList);
 				}
 				if(j < 0) {
 					break;
 				}
 			}
 		}
-		return false;
+		return coordinatesMap;
 	}
 	
-	public boolean searchSouthEastToNorthWest(char[][] charMatrix, String wordToSearch) {
+	public LinkedHashMap<Integer, Integer> searchSouthEastToNorthWest(char[][] charMatrix, String wordToSearch) {
+		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
@@ -210,27 +218,22 @@ public class Finder {
 					colList = new ArrayList<>();
 				}
 				if(i == wordToSearch.length()) {	
-					return printOutAndReturnTrue(wordToSearch, rowList, colList);
+					return addToLinkedHashMap(rowList, colList);
 				}
 				if(j < 0) {
 					break;
 				}
 			}
 		}
-		return false;
+		return coordinatesMap;
 	}
 	
-	private boolean printOutAndReturnTrue(String wordToSearch, List<Integer> rowList, List<Integer> colList) {
-		System.out.print(wordToSearch + ": ");
-		int x = 0;
+	private LinkedHashMap<Integer, Integer> addToLinkedHashMap(List<Integer> rowList, List<Integer> colList) {
+		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
 		for(int y = 0; y < rowList.size(); y++) {
-			x++;
-			if(x == wordToSearch.length()) {
-	    		System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + ")\n");
-	    	} else {
-	        System.out.print("(" + colList.get(y) + "," +  rowList.get(y) + "),");
-	    	}
+			coordinatesMap.put(colList.get(y), rowList.get(y));
+		
 		}
-		return true;
+		return coordinatesMap;
 	}
 }
