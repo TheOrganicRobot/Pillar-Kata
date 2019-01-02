@@ -1,6 +1,12 @@
 Manifest-Version: 1.0
 Built-By: The Organic Robot
-Class-Path: lib/hamcrest-core-2.1.jar lib/hamcrest-library-2.1.jar
+Class-Path: lib/hamcrest-core-2.1.jar lib/hamcrest-library-2.1.jar lib
+ /google-collections-1.0.jar lib/guava-hamcrest-matchers-2.0.0.jar lib
+ /hamcrest-matchers-2.0.0.jar lib/commons-validator-1.5.0.jar lib/comm
+ ons-beanutils-1.9.2.jar lib/commons-digester-1.8.1.jar lib/commons-lo
+ gging-1.2.jar lib/commons-collections-3.2.2.jar lib/snakeyaml-1.17.ja
+ r lib/guava-19.0.jar lib/java-hamcrest-2.0.0.0.jar lib/slf4j-api-1.7.
+ 13.jar
 Build-Jdk: 1.8.0_191
 Created-By: Maven Integration for Eclipse
 Main-Class: main.java.searchKata.WordSearch

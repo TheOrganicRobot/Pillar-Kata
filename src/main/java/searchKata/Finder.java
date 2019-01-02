@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Set;
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
 
 public class Finder {
 
-	public LinkedHashMap<Integer, Integer> searchWestToEast(char[][] charMatrix, String wordToSearch) {
-		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
+	public Multimap<Integer, Integer> searchWestToEast(char[][] charMatrix, String wordToSearch) {
+		Multimap<Integer, Integer> coordinatesMap = LinkedHashMultimap.create();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();	
 		int i = 0;
@@ -30,8 +32,8 @@ public class Finder {
 		}
 		return coordinatesMap;
 	}
-	public LinkedHashMap<Integer, Integer> searchEastToWest(char[][] charMatrix, String wordToSearch) {
-		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
+	public Multimap<Integer, Integer> searchEastToWest(char[][] charMatrix, String wordToSearch) {
+		Multimap<Integer, Integer> coordinatesMap = LinkedHashMultimap.create();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();	
 		int i = 0;
@@ -54,8 +56,8 @@ public class Finder {
 		return coordinatesMap;
 	}
 	
-	public LinkedHashMap<Integer, Integer> searchNorthToSouth(char[][] charMatrix, String wordToSearch) {
-		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
+	public Multimap<Integer, Integer> searchNorthToSouth(char[][] charMatrix, String wordToSearch) {
+		Multimap<Integer, Integer> coordinatesMap = LinkedHashMultimap.create();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
@@ -79,8 +81,8 @@ public class Finder {
 		return coordinatesMap;
 	}
 	
-		public LinkedHashMap<Integer, Integer> searchSouthToNorth(char[][] charMatrix, String wordToSearch) {
-			LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
+		public Multimap<Integer, Integer> searchSouthToNorth(char[][] charMatrix, String wordToSearch) {
+			Multimap<Integer, Integer> coordinatesMap = LinkedHashMultimap.create();
 			List<Integer> rowList = new ArrayList<>();
 			List<Integer> colList = new ArrayList<>();		
 			int i = 0;
@@ -104,8 +106,8 @@ public class Finder {
 			return coordinatesMap;
 		}
 		
-	public LinkedHashMap<Integer, Integer> searchNorthWestToSouthEast(char[][] charMatrix, String wordToSearch) {
-		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
+	public Multimap<Integer, Integer> searchNorthWestToSouthEast(char[][] charMatrix, String wordToSearch) {
+		Multimap<Integer, Integer> coordinatesMap = LinkedHashMultimap.create();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
@@ -134,8 +136,8 @@ public class Finder {
 		return coordinatesMap;
 	}
 	
-	public LinkedHashMap<Integer, Integer> searchNorthEastToSouthWest(char[][] charMatrix, String wordToSearch) {
-		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
+	public Multimap<Integer, Integer> searchNorthEastToSouthWest(char[][] charMatrix, String wordToSearch) {
+		Multimap<Integer, Integer> coordinatesMap = LinkedHashMultimap.create();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
@@ -165,8 +167,8 @@ public class Finder {
 		return coordinatesMap;
 	}
 	
-	public LinkedHashMap<Integer, Integer> searchSouthWestToNorthEast(char[][] charMatrix, String wordToSearch) {
-		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
+	public Multimap<Integer, Integer> searchSouthWestToNorthEast(char[][] charMatrix, String wordToSearch) {
+		Multimap<Integer, Integer> coordinatesMap = LinkedHashMultimap.create();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
@@ -196,8 +198,8 @@ public class Finder {
 		return coordinatesMap;
 	}
 	
-	public LinkedHashMap<Integer, Integer> searchSouthEastToNorthWest(char[][] charMatrix, String wordToSearch) {
-		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
+	public Multimap<Integer, Integer> searchSouthEastToNorthWest(char[][] charMatrix, String wordToSearch) {
+		Multimap<Integer, Integer> coordinatesMap = LinkedHashMultimap.create();
 		List<Integer> rowList = new ArrayList<>();
 		List<Integer> colList = new ArrayList<>();		
 		int i = 0;
@@ -228,8 +230,8 @@ public class Finder {
 		return coordinatesMap;
 	}
 	
-	private LinkedHashMap<Integer, Integer> addToLinkedHashMap(List<Integer> rowList, List<Integer> colList) {
-		LinkedHashMap<Integer, Integer> coordinatesMap = new LinkedHashMap<Integer, Integer>();
+	private Multimap<Integer, Integer> addToLinkedHashMap(List<Integer> rowList, List<Integer> colList) {
+		Multimap<Integer, Integer> coordinatesMap = LinkedHashMultimap.create();
 		for(int y = 0; y < rowList.size(); y++) {
 			coordinatesMap.put(colList.get(y), rowList.get(y));
 		
