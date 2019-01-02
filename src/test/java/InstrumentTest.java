@@ -89,7 +89,7 @@ public class InstrumentTest {
 	}
 	
 	@Test
-	public void testSearchWestToEast2() {
+	public void testSearchWestToEast() {
 		expectedMap.put(0, 10);
 		expectedMap.put(1, 10);
 		expectedMap.put(2, 10);
@@ -106,6 +106,33 @@ public class InstrumentTest {
 		assertThat(coordinatesMap, IsMapContaining.hasEntry(2,10));
 		assertThat(coordinatesMap, IsMapContaining.hasEntry(3,10));
 		assertThat(coordinatesMap, IsMapContaining.hasEntry(4,10));
+		
+	}
+	
+	@Test
+	public void testSearchEastToWest() {
+		expectedMap.put(8, 9);
+		expectedMap.put(7, 9);
+		expectedMap.put(6, 9);
+		expectedMap.put(5, 9);
+		expectedMap.put(4, 9);
+		expectedMap.put(3, 9);
+		expectedMap.put(2, 9);
+		expectedMap.put(1, 9);
+		
+		coordinatesMap = find.searchEastToWest(charMatrix, myWords.get(6));
+	
+		assertThat(coordinatesMap, is(expectedMap));
+		assertThat(coordinatesMap.size(), is(8)); //-----Word is Baritone
+		
+		assertThat(coordinatesMap, IsMapContaining.hasEntry(8,9));
+		assertThat(coordinatesMap, IsMapContaining.hasEntry(7,9));
+		assertThat(coordinatesMap, IsMapContaining.hasEntry(6,9));
+		assertThat(coordinatesMap, IsMapContaining.hasEntry(5,9));
+		assertThat(coordinatesMap, IsMapContaining.hasEntry(4,9));
+		assertThat(coordinatesMap, IsMapContaining.hasEntry(3,9));
+		assertThat(coordinatesMap, IsMapContaining.hasEntry(2,9));
+		assertThat(coordinatesMap, IsMapContaining.hasEntry(1,9));
 		
 	}
 	
