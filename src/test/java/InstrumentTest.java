@@ -161,4 +161,20 @@ public class InstrumentTest {
 		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));
 	
 	}
+	
+	@Test
+	public void testSearchNorthWestToSouthEast() {
+		expectedMap.put(8, 5);
+		expectedMap.put(9, 6);
+		expectedMap.put(10, 7);
+		expectedMap.put(11, 8);
+		expectedMap.put(12, 9);
+			
+		coordinatesMap = find.searchNorthWestToSouthEast(charMatrix, myWords.get(3));
+	
+		assertThat(coordinatesMap, is(expectedMap));
+		assertThat(coordinatesMap.size(), is(5)); //-----Word is Drums
+		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));
+	
+	}
 }
