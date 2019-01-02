@@ -106,7 +106,7 @@ public class InstrumentTest {
 		coordinatesMap = find.searchWestToEast(charMatrix, myWords.get(4));
 	
 		assertThat(coordinatesMap, is(expectedMap));
-		assertThat(coordinatesMap.size(), is(5)); //-----Word is Piano
+		assertThat(coordinatesMap.size(), is(5)); //-----Word is PIANO
 		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));
 	
 	}
@@ -125,7 +125,7 @@ public class InstrumentTest {
 		coordinatesMap = find.searchEastToWest(charMatrix, myWords.get(6));
 	
 		assertThat(coordinatesMap, is(expectedMap));
-		assertThat(coordinatesMap.size(), is(8)); //-----Word is Baritone
+		assertThat(coordinatesMap.size(), is(8)); //-----Word is BARITONE
 		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));
 	
 	}
@@ -140,7 +140,7 @@ public class InstrumentTest {
 		coordinatesMap = find.searchNorthToSouth(charMatrix, myWords.get(0));
 	
 		assertThat(coordinatesMap, is(expectedMap));
-		assertThat(coordinatesMap.size(), is(4)); //-----Word is Bass
+		assertThat(coordinatesMap.size(), is(4)); //-----Word is BASS
 		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));
 	
 	}
@@ -157,7 +157,7 @@ public class InstrumentTest {
 		coordinatesMap = find.searchSouthToNorth(charMatrix, myWords.get(1));
 	
 		assertThat(coordinatesMap, is(expectedMap));
-		assertThat(coordinatesMap.size(), is(6)); //-----Word is Guitar
+		assertThat(coordinatesMap.size(), is(6)); //-----Word is GUITAR
 		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));
 	
 	}
@@ -173,8 +173,28 @@ public class InstrumentTest {
 		coordinatesMap = find.searchNorthWestToSouthEast(charMatrix, myWords.get(3));
 	
 		assertThat(coordinatesMap, is(expectedMap));
-		assertThat(coordinatesMap.size(), is(5)); //-----Word is Drums
+		assertThat(coordinatesMap.size(), is(5)); //-----Word is DRUMS
 		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));
 	
 	}
+	
+	@Test
+	public void testSearchNorthEastToSouthWest() {
+		expectedMap.put(11, 0);
+		expectedMap.put(10, 1);
+		expectedMap.put(9, 2);
+		expectedMap.put(8, 3);
+		expectedMap.put(7, 4);
+		expectedMap.put(6, 5);
+		expectedMap.put(5, 6);
+		expectedMap.put(4, 7);
+			
+		coordinatesMap = find.searchNorthEastToSouthWest(charMatrix, myWords.get(5));
+	
+		assertThat(coordinatesMap, is(expectedMap));
+		assertThat(coordinatesMap.size(), is(8)); //-----Word is MANDOLIN
+		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));
+	
+	}
+	
 }
