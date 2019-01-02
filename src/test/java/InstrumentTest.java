@@ -197,4 +197,20 @@ public class InstrumentTest {
 	
 	}
 	
+	@Test
+	public void testSearchSouthWestToNorthEast() {
+		expectedMap.put(0, 7);
+		expectedMap.put(1, 6);
+		expectedMap.put(2, 5);
+		expectedMap.put(3, 4);
+		expectedMap.put(4, 3);
+			
+		coordinatesMap = find.searchSouthWestToNorthEast(charMatrix, myWords.get(2));
+	
+		assertThat(coordinatesMap, is(expectedMap));
+		assertThat(coordinatesMap.size(), is(5)); //-----Word is FLUTE
+		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));
+	
+	}
+	
 }
