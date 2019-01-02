@@ -191,5 +191,19 @@ public class StarTrekTest {
 		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));	
 	}
 	
+	@Test
+	public void testSearchSouthEastToNorthWest() {
+		expectedMap.put(3, 3);
+		expectedMap.put(2, 2);
+		expectedMap.put(1, 1);
+		expectedMap.put(0, 0);
+		
+		coordinatesMap = find.searchSouthEastToNorthWest(charMatrix, myWords.get(5));
+	
+		assertThat(coordinatesMap, is(expectedMap));
+		assertThat(coordinatesMap.size(), is(4)); //-----Word is SULU
+		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));	
+	}
+	
 	
 }
