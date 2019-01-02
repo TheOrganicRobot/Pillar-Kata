@@ -213,4 +213,22 @@ public class InstrumentTest {
 	
 	}
 	
+	@Test
+	public void testSearchSouthEastToNorthWest() {
+		expectedMap.put(13, 11);
+		expectedMap.put(12, 10);
+		expectedMap.put(11, 9);
+		expectedMap.put(10, 8);
+		expectedMap.put(9, 7);
+		expectedMap.put(8, 6);
+		expectedMap.put(7, 5);
+			
+		coordinatesMap = find.searchSouthEastToNorthWest(charMatrix, myWords.get(7));
+	
+		assertThat(coordinatesMap, is(expectedMap));
+		assertThat(coordinatesMap.size(), is(7)); //-----Word is TRUMPET
+		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));
+	
+	}
+	
 }
