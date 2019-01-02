@@ -1,9 +1,6 @@
 # Pillar-Kata
 
-In order to run this program, copy the source directory to create a local repository.
-Once created, from the command line, cd into the Pillar-Kata directory.
-Once there, type in java -jar Pillar-Kata-1.0-SNAPSHOT.jar 
-From here you can see the output of two different test files I made or input a path to a separate test file you may have locally.
-
-ALTERNATE: 
-You could also import the Maven project into an IDE and run the program from there.
+In order to run the test for this program, download the repository and import the Maven project into your IDE.
+Once there, open the project and go to test.java
+Both test files are included as well their appropriate seed data.
+Right click on the package and select "Run as JUnit Test"
