@@ -1,5 +1,8 @@
 package test.java;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.*;
 
 import java.io.ByteArrayOutputStream;
@@ -10,6 +13,9 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
 
 import main.java.searchKata.FileRead;
 import main.java.searchKata.Finder;
@@ -29,8 +35,8 @@ public class StarTrekTest {
 	private List<String[]> fileReadOutput;
 	private List<String> myWords;
 	private char[][] charMatrix;
-	private OutputStream os;
-	private PrintStream ps;
+	private Multimap<Integer, Integer> coordinatesMap;
+	private Multimap<Integer, Integer> expectedMap;
 	
 	@Before
 	public void setup() {	
@@ -47,9 +53,8 @@ public class StarTrekTest {
 		myWords = wordsToSearch.getWordsToSearch(fileReadOutput); //----------- List of words to be searched
 		charMatrix = matrix.Matricize(fileReadOutput); //----------- Two dimensional array for searching words
 		
-		os = new ByteArrayOutputStream(); //----------- #1 of capturing system out stream for testing
-		ps = new PrintStream(os); //----------- #2 of capturing system out stream for testing
-		System.setOut(ps); //----------- #3 of capturing system out stream for testing
+		coordinatesMap = LinkedHashMultimap.create();
+		expectedMap = LinkedHashMultimap.create();
 	}
 	
 	@Test
@@ -69,14 +74,31 @@ public class StarTrekTest {
 		assertEquals(8, myWords.size());
 	}
 
-		@Test
-		public void testCreateMatrixOfCharacters() {
-			assertEquals(15, charMatrix.length);
-			assertEquals('S', charMatrix[0][5]);
-			assertEquals('C', charMatrix[1][5]);
-			assertEquals('O', charMatrix[2][5]);
-			assertEquals('T', charMatrix[3][5]);
-			assertEquals('T', charMatrix[4][5]);
-			assertEquals('Y', charMatrix[5][5]);
-		}
+	@Test
+	public void testCreateMatrixOfCharacters() {
+		assertEquals(15, charMatrix.length);
+		assertEquals('S', charMatrix[0][5]);
+		assertEquals('C', charMatrix[1][5]);
+		assertEquals('O', charMatrix[2][5]);
+		assertEquals('T', charMatrix[3][5]);
+		assertEquals('T', charMatrix[4][5]);
+		assertEquals('Y', charMatrix[5][5]);
+	}
+	
+	@Test
+	public void testSearchWestToEast() {
+		expectedMap.put(0, 5);
+		expectedMap.put(1, 5);
+		expectedMap.put(2, 5);
+		expectedMap.put(3, 5);
+		expectedMap.put(4, 5);
+		expectedMap.put(5, 5);
+		
+		coordinatesMap = find.searchWestToEast(charMatrix, myWords.get(3));
+	
+		assertThat(coordinatesMap, is(expectedMap));
+		assertThat(coordinatesMap.size(), is(6)); //-----Word is SCOTTY
+		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));
+	
+	}
 }

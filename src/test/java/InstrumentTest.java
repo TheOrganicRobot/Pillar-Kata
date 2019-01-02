@@ -44,8 +44,6 @@ public class InstrumentTest {
 	private char[][] charMatrix;
 	private Multimap<Integer, Integer> coordinatesMap;
 	private Multimap<Integer, Integer> expectedMap;
-	private OutputStream os;
-	private PrintStream ps;
 	
 	@Before
 	public void setup() {	
@@ -63,9 +61,7 @@ public class InstrumentTest {
 		charMatrix = matrix.Matricize(fileReadOutput); //----------- Two dimensional array for searching words
 		coordinatesMap = LinkedHashMultimap.create();
 		expectedMap = LinkedHashMultimap.create();
-		os = new ByteArrayOutputStream(); //----------- #1 of capturing system out stream for testing
-		ps = new PrintStream(os); //----------- #2 of capturing system out stream for testing
-		System.setOut(ps); //----------- #3 of capturing system out stream for testing
+		
 	}
 	
 	@Test
