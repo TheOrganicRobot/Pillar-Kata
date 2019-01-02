@@ -143,4 +143,19 @@ public class StarTrekTest {
 		assertThat(coordinatesMap.size(), is(4)); //-----Word is KHAN
 		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));	
 	}
+	
+	@Test
+	public void testSearchNorthWestToSouthEast() {
+		expectedMap.put(2, 1);
+		expectedMap.put(3, 2);
+		expectedMap.put(4, 3);
+		expectedMap.put(5, 4);
+		expectedMap.put(6, 5);
+		
+		coordinatesMap = find.searchNorthWestToSouthEast(charMatrix, myWords.get(4));
+	
+		assertThat(coordinatesMap, is(expectedMap));
+		assertThat(coordinatesMap.size(), is(5)); //-----Word is SPOCK
+		assertThat(coordinatesMap.entries(), equalTo(expectedMap.entries()));	
+	}
 }
